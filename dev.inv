@@ -1,2 +1,2 @@
-[webservers]
+[Testbenches]
 35.87.130.216 ansible_user=ubuntu
