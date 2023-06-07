@@ -1,5 +1,5 @@
 ---
-- hosts: webservers
+- hosts: Testbenches
   become: yes
   tasks:
     - name: INSTALL APACHE2
