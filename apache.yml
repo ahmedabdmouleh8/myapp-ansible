@@ -7,14 +7,12 @@
         name: apache2
         update_cache: yes
         state: latest
-
     - name: ENABLED MOD_REWRITE
       apache2_module:
         name: rewrite
         state: present
       notify:
         - RESTART APACHE2
-
     - name: APACHE2 LISTEN ON PORT 8080
       lineinfile:
         dest: /etc/apache2/ports.conf
@@ -23,12 +21,10 @@
         state: present
       notify:
         - RESTART APACHE2
-
     - name: Deploy static website
       copy:
         src: index.html
         dest: /var/www/html/
-
   handlers:
     - name: RESTART APACHE2
       service:
